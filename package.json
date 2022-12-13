@@ -1,0 +1,30 @@
+{
+    "name": "react-native-rowling-wizard",
+    "version": "1.0.0",
+    "description": "this is designed for rowling",
+    "homepage": "https://github.com/markjenkins19973/react-native-rowling-wizard",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "react-native-rowling-wizard"
+    ],
+    "author": {
+        "name": "rowling",
+        "email": "rowling@example.com"
+    },
+    "license": "MIT",   
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/markjenkins19973/react-native-rowling-wizard.git"
+    },
+    "peerDependencies": {
+        "react": "*",
+        "react-native": "*",
+        "react-native-splash-screen": "^3.2.0",
+        "react-native-root-toast": "^3.4.0",
+        "react-native-network-info": "5.2.1"
+    }
+  }
+  
