@@ -1,6 +1,6 @@
 {
     "name": "react-native-rowling-wizard",
-    "version": "1.0.3",
+    "version": "1.0.5",
     "description": "this is designed for rowling",
     "homepage": "https://github.com/markjenkins19973/react-native-rowling-wizard",
     "main": "index.js",
@@ -23,7 +23,7 @@
         "react": "*",
         "react-native": "*",
         "react-native-splash-screen": "^3.2.0",
-        "react-native-loading-spinner-overlay": "^3.0.1",
+        "react-native-root-toast": "^3.4.0",
         "react-native-network-info": "5.2.1"
     }
   }

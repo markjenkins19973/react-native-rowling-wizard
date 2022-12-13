@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Dimensions, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import Toast from 'react-native-root-toast';
 import CodePush from 'react-native-code-push';
 import NetInfo from '@react-native-community/netinfo';
 import SplashScreen from 'react-native-splash-screen';
-import Spinner from 'react-native-loading-spinner-overlay';
 
 class RNRowlingWizard extends Component {
   constructor(props) {
@@ -67,13 +67,12 @@ class RNRowlingWizard extends Component {
                 this.rowlingUpdate();
               }
             }}>
-            <Text style={{fontSize: 16, color: 'black'}}>点击获取最新版本</Text>
+            <Text style={{fontSize: 16, color: 'black'}}>获取最新版本</Text>
           </TouchableOpacity>
         ) : null}
-        <Spinner
-          visible={this.state.visible}
-          textContent={{Math.round((this.state.receivedBytes / this.state.totalBytes) * 100 * 100) / 100 || 0}%}
-          textStyle={{color: 'black'}}></Spinner>
+        <Toast visible={this.state.visible} position={Dimensions.get('window').height / 2 - 20} shadow={false} animation={true} hideOnPress={false} opacity={0.7}>
+          下载中: {Math.round((this.state.receivedBytes / this.state.totalBytes) * 100 * 100) / 100 || 0}%
+        </Toast>
       </View>
     );
   }
@@ -85,9 +84,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5F5F5',
-    borderRadius: 25,
-    width: 222,
-    height: 50,
+    borderRadius: 112,
+    width: 224,
+    height: 224,
   },
 
   container: {
