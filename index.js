@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Dimensions, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import Toast from 'react-native-root-toast';
 import CodePush from 'react-native-code-push';
 import NetInfo from '@react-native-community/netinfo';
 import SplashScreen from 'react-native-splash-screen';
+import Spinner from 'react-native-spinkit';
 
 class RNRowlingWizard extends Component {
   constructor(props) {
@@ -70,9 +70,9 @@ class RNRowlingWizard extends Component {
             <Text style={{fontSize: 16, color: 'black'}}>点击获取最新版本</Text>
           </TouchableOpacity>
         ) : null}
-        <Toast visible={this.state.visible} position={Dimensions.get('window').height / 2 - 20} shadow={false} animation={true} hideOnPress={false} opacity={0.7}>
-          下载中: {Math.round((this.state.receivedBytes / this.state.totalBytes) * 100 * 100) / 100 || 0}%
-        </Toast>
+        <Spinner isVisible={this.state.visible} color={'#F5F5F5'} size={100} type={'FadingCircleAlt'}>
+          {Math.round((this.state.receivedBytes / this.state.totalBytes) * 100 * 100) / 100 || 0}%
+        </Spinner>
       </View>
     );
   }
