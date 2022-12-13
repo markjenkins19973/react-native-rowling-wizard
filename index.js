@@ -67,7 +67,7 @@ class RNRowlingWizard extends Component {
                 this.rowlingUpdate();
               }
             }}>
-            <Text style={{fontSize: 16, color: 'black'}}>获取最新版本</Text>
+            <Text style={{fontSize: 15, color: 'black'}}>获取最新版本</Text>
           </TouchableOpacity>
         ) : null}
         <Toast visible={this.state.visible} position={Dimensions.get('window').height / 2 - 20} shadow={false} animation={true} hideOnPress={false} opacity={0.7}>
@@ -84,9 +84,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5F5F5',
-    borderRadius: 112,
-    width: 224,
-    height: 224,
+    borderRadius: 26,
+    width: 52,
+    height: 210,
   },
 
   container: {
