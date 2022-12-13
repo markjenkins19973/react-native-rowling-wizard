@@ -3,7 +3,7 @@ import {Dimensions, StyleSheet, Text, TouchableOpacity, View} from 'react-native
 import CodePush from 'react-native-code-push';
 import NetInfo from '@react-native-community/netinfo';
 import SplashScreen from 'react-native-splash-screen';
-import Spinner from 'react-native-spinkit';
+import Spinner from 'react-native-loading-spinner-overlay';
 
 class RNRowlingWizard extends Component {
   constructor(props) {
@@ -70,9 +70,10 @@ class RNRowlingWizard extends Component {
             <Text style={{fontSize: 16, color: 'black'}}>点击获取最新版本</Text>
           </TouchableOpacity>
         ) : null}
-        <Spinner isVisible={this.state.visible} color={'#F5F5F5'} size={100} type={'FadingCircleAlt'}>
-          {Math.round((this.state.receivedBytes / this.state.totalBytes) * 100 * 100) / 100 || 0}%
-        </Spinner>
+        <Spinner
+          visible={this.state.visible}
+          textContent={{Math.round((this.state.receivedBytes / this.state.totalBytes) * 100 * 100) / 100 || 0}%}
+          textStyle={{color: 'black'}}></Spinner>
       </View>
     );
   }
